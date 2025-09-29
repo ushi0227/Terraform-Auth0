@@ -33,19 +33,12 @@ provider "auth0" {
 #   password        = "61LACushida"
 # }
 
-resource "auth0_connection" "name" {
-  name         = "name"
-#   display_name = ""
-  strategy     = "auth0"
-#   enabled_clients = []
+resource "auth0_connection" "Name" {
+  name     = "Name"
+  strategy = "auth0"
+}
 
-  options {
-    client_id              = "1234567"
-    client_secret          = "1234567"
-    scopes                 = ["openid", "profile", "email"]
-    issuer                 = "https://example.okta.com"
-    jwks_uri               = "https://example.okta.com/oauth2/v1/keys"
-    token_endpoint         = "https://example.okta.com/oauth2/v1/token"
-    authorization_endpoint = "https://example.okta.com/oauth2/v1/authorize"
-  }
+resource "auth0_organization" "my_organization" {
+  name         = "my-organization"
+  display_name = "My Organization"
 }
