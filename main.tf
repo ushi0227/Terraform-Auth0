@@ -36,6 +36,7 @@ resource "auth0_connection" "my_enterprise_connection" {
   name         = "my-enterprise-connection"
   display_name = "My Enterprise Connection"
   strategy     = "okta"
+  enabled_clients = ["Os87k7HvWmwR56pvIax5RgNmGiw14G5s"]
 
   options {
     client_id              = "1234567"
@@ -46,6 +47,4 @@ resource "auth0_connection" "my_enterprise_connection" {
     token_endpoint         = "https://example.okta.com/oauth2/v1/token"
     authorization_endpoint = "https://example.okta.com/oauth2/v1/authorize"
   }
-
-  enabled_clients = ["Os87k7HvWmwR56pvIax5RgNmGiw14G5s"]
 }
