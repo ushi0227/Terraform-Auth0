@@ -8,6 +8,7 @@ terraform {
 }
 
 provider "auth0" {
+  version = ">= 0.27.1"
   domain        = "lac-ushida-cic.cic-demo-platform.auth0app.com"
   client_id     = "Os87k7HvWmwR56pvIax5RgNmGiw14G5s"
   client_secret = "2eyOccybh3EXunNZtuip-LcNFDCg-6LYkVFn0QtzUfpeM-JSpoXwQ3J3ix-fLFGP"
@@ -32,11 +33,11 @@ provider "auth0" {
 #   password        = "61LACushida"
 # }
 
-resource "auth0_connection" "my_enterprise_connection" {
-  name         = "my-enterprise-connection"
-  display_name = "My Enterprise Connection"
-  strategy     = "okta"
-  enabled_clients = ["Os87k7HvWmwR56pvIax5RgNmGiw14G5s"]
+resource "auth0_connection" "name" {
+  name         = "name"
+#   display_name = ""
+  strategy     = "auth0"
+#   enabled_clients = []
 
   options {
     client_id              = "1234567"
