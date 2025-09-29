@@ -13,21 +13,51 @@ provider "auth0" {
   client_secret = "2eyOccybh3EXunNZtuip-LcNFDCg-6LYkVFn0QtzUfpeM-JSpoXwQ3J3ix-fLFGP"
 }
 
-resource "auth0_client" "sample" {
-  name                = "ReactSamples"
-  app_type            = "spa"
-  callbacks           = ["http://localhost:3000"]
-  allowed_origins     = ["http://localhost:3000"]
-  allowed_logout_urls = ["http://localhost:3000"]
-  web_origins         = ["http://localhost:3000"]
+# resource "auth0_client" "sample" {
+#   name                = "ReactSamples"
+#   app_type            = "spa"
+#   callbacks           = ["http://localhost:3000"]
+#   allowed_origins     = ["http://localhost:3000"]
+#   allowed_logout_urls = ["http://localhost:3000"]
+#   web_origins         = ["http://localhost:3000"]
+# }
+# 
+# resource "auth0_user" "user" {         # ユーザ作成
+#   connection_name = "Username-Password-Authentication"
+#   user_id         = ""
+#   username        = "demo_test"
+#   name            = "Test Demo"
+#   email           = "test.demo@lac.dev.local"
+#   email_verified  = true
+#   password        = "61LACushida"
+# }
+
+resource "auth0_connection" "my_enterprise_connection" {
+  name         = "my-enterprise-connection"
+  display_name = "My Enterprise Connection"
+  strategy     = "okta"
+
+  options {
+    client_id              = "1234567"
+    client_secret          = "1234567"
+    issuer                 = "https://example.okta.com"
+    jwks_uri               = "https://example.okta.com/oauth2/v1/keys"
+    token_endpoint         = "https://example.okta.com/oauth2/v1/token"
+    authorization_endpoint = "https://example.okta.com/oauth2/v1/authorize"
+  }
 }
 
-resource "auth0_user" "user" {
-  connection_name = "Username-Password-Authentication"
-  user_id         = ""
-  username        = "demo_test"
-  name            = "Test Demo"
-  email           = "test.demo@lac.dev.local"
-  email_verified  = true
-  password        = "61LACushida"
+resource "auth0_connection" "my_enterprise_connection_2" {
+  name         = "my-enterprise-connection-2"
+  display_name = "My Enterprise Connection 2"
+  strategy     = "okta"
+
+  options {
+    client_id              = "1234567"
+    client_secret          = "1234567"
+    issuer                 = "https://example.okta.com"
+    jwks_uri               = "https://example.okta.com/oauth2/v1/keys"
+    token_endpoint         = "https://example.okta.com/oauth2/v1/token"
+    authorization_endpoint = "https://example.okta.com/oauth2/v1/authorize"
+  }
 }
