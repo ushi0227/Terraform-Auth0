@@ -9,8 +9,8 @@ terraform {
 
 provider "auth0" {
   domain        = "lac-ushida-cic.cic-demo-platform.auth0app.com"
-  client_id     = "ZVxEyVQoUqFjJKrwFGOtJwMF6ozzGdMM"
-  client_secret = "o3Y0MwZcdbp6wIoxSLCXBDs4aC-v4EC1TVnUaAGzXAkEzHXiFjlUVOD7yIHuYwb9"
+  client_id     = "0wzuSgtgrxsENqN1hBHAaNaCl3kGg6gM"
+  client_secret = "ws2TiY5u-RezROJSqoeQTMqtze9FDzIUng_5INd81jKqq0ByTM0B6yRzjSoCUxsE"
 }
 
 resource "auth0_user" "user" {
