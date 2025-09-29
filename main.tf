@@ -24,7 +24,7 @@ resource "auth0_client" "sample" {
 
 resource "auth0_user" "user" {
   connection_name = "Username-Password-Authentication"
-  user_id         = "12345"
+  user_id         = ""
   username        = "demo_test"
   name            = "Test Demo"
   email           = "test.demo@lac.dev.local"
