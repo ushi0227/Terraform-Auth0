@@ -7,10 +7,14 @@ terraform {
   }
 }
 
+export AUTH0_DOMAIN='lac-ushida-cic.cic-demo-platform.auth0app.com'
+export AUTH0_CLIENT_ID='Os87k7HvWmwR56pvIax5RgNmGiw14G5s'
+export AUTH0_CLIENT_SECRET='2eyOccybh3EXunNZtuip-LcNFDCg-6LYkVFn0QtzUfpeM-JSpoXwQ3J3ix-fLFGP'
+
 provider "auth0" {
-  domain        = "lac-ushida-cic.cic-demo-platform.auth0app.com"
-  client_id     = "Os87k7HvWmwR56pvIax5RgNmGiw14G5s"
-  client_secret = "2eyOccybh3EXunNZtuip-LcNFDCg-6LYkVFn0QtzUfpeM-JSpoXwQ3J3ix-fLFGP"
+#   domain        = "lac-ushida-cic.cic-demo-platform.auth0app.com"
+#   client_id     = "Os87k7HvWmwR56pvIax5RgNmGiw14G5s"
+#   client_secret = "2eyOccybh3EXunNZtuip-LcNFDCg-6LYkVFn0QtzUfpeM-JSpoXwQ3J3ix-fLFGP"
 }
 
 resource "auth0_client" "sample" {
