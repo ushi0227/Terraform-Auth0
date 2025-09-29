@@ -32,13 +32,3 @@ provider "auth0" {
 #   email_verified  = true
 #   password        = "61LACushida"
 # }
-
-resource "auth0_connection" "Name" {
-  name     = "Name"
-  strategy = "auth0"
-}
-
-resource "auth0_organization" "my_organization" {
-  name         = "my-organization"
-  display_name = "My Organization"
-}
