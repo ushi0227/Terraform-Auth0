@@ -40,21 +40,7 @@ resource "auth0_connection" "my_enterprise_connection" {
   options {
     client_id              = "1234567"
     client_secret          = "1234567"
-    issuer                 = "https://example.okta.com"
-    jwks_uri               = "https://example.okta.com/oauth2/v1/keys"
-    token_endpoint         = "https://example.okta.com/oauth2/v1/token"
-    authorization_endpoint = "https://example.okta.com/oauth2/v1/authorize"
-  }
-}
-
-resource "auth0_connection" "my_enterprise_connection_2" {
-  name         = "my-enterprise-connection-2"
-  display_name = "My Enterprise Connection 2"
-  strategy     = "okta"
-
-  options {
-    client_id              = "1234567"
-    client_secret          = "1234567"
+    scopes                 = ["openid", "profile", "email"]
     issuer                 = "https://example.okta.com"
     jwks_uri               = "https://example.okta.com/oauth2/v1/keys"
     token_endpoint         = "https://example.okta.com/oauth2/v1/token"
